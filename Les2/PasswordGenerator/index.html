@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  'use strict';
+
+  let symbols = '1234567890~!@#$%^&*()-—+=;:<>,.?/|[]{}?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  let password = '';
+
+  /**
+   * Функция возвращает случайное целое число между min (включительно) и max (не включая max)
+   * @param {number} min
+   * @param {number} ax
+   * @returns {number}
+   */
+  function getRandomInt(min, max) {
+	  return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  /**
+   * Функция, которая генерирует случайный номер от 0 до 91 (общее количество символов в строке symbols)
+   * @param {number} passLength длина пароля
+   */
+  function generate(passLength) {
+    let symbolPosition = getRandomInt(0, 92);
+	password += symbols.charAt(symbolPosition);
+	passLength--;
+	if (passLength != 0) {
+		generate(passLength);
+    }
+  }
+
+  /**
+   * Функция, принимающая длину пароля от пользователя, переводя значение в число
+   * @returns {number}
+   */
+  function askPassLength() {
+	  return (prompt('Введите длину пароля'));
+  }
+
+  generate(askPassLength());
+  alert(`Ваш пароль: ${password}`);
+
+</script>
+</body>
+</html>
