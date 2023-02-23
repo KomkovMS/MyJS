@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        'use strict';
+
+		// Игра угадай число. Рекурсия.
+        const riddle = parseInt(Math.random() * 100); //загадка
+
+		function guess(num) {  //угадывать
+            let answer = parseInt(prompt('Угадайте число от 0 до 100: '));    //ответ
+            if (answer > num) {
+				alert('Ваше число слишком большое')
+            } else if (answer < num) {
+				alert('Ваше число слишком маленькое')
+            } else if (answer == num) {
+				alert('Вы угадали');
+				return;
+            } else {
+				alert('Необходимо ввести число')
+            }
+			guess(num);
+        }
+
+		guess(riddle);
+
+    </script>
+</body>
+</html>
