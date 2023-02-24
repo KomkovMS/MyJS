@@ -42,16 +42,11 @@ Infinity делать не нужно, однако, в случае если б
    */
   function mathOperation(arg1, arg2, operation) {
     switch (operation) {
-      case '+':
-       return getAddition(arg1, arg2);
-      case '-':
-        return getDifference(arg1, arg2);
-      case '*':
-        return getMultiplication(arg1, arg2);
-      case '/':
-        return getDivision(arg1, arg2);
-      default:
-        return NaN;
+      case '+': return getAddition(arg1, arg2);
+      case '-': return getDifference(arg1, arg2);
+      case '*': return getMultiplication(arg1, arg2);
+      case '/': return getDivision(arg1, arg2);
+      default: return NaN;
     }
   }
 
@@ -66,20 +61,13 @@ Infinity делать не нужно, однако, в случае если б
   }
 
   /**
-   * Функция вычитает два переданных числа. Вычитание происходит из большего числа.
+   * Функция вычитает два переданных числа.
    * @param {number} num1 Первое число, из которого будет вычитаться второе число в функции.
    * @param {number} num2 Второе число, из которого будет вычитаться первое число в функции.
    * @returns {number} Вернет число, получившееся в результате вычитания двух чисел.
    */
   function getDifference(num1, num2) {
-    if (num1 > num2) {
-      return num1 - num2;
-    }
-    else if (num2 > num1) {
-      return num2 - num1;
-    } else {
-      return 0;
-    }
+    return Math.abs(num1 - num2);
   }
 
   /**
