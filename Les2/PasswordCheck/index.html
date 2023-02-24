@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  "use strict";
+
+  const password = prompt('Введите пароль, где есть английские быквы и цифры');
+  const lengthMore5 = password.length > 5;
+  const digitsPresented = /\d+/gm.test(password);
+  const lettersPresented = /[a-zA-Z]+/gm.test(password);
+  if (lengthMore5 && digitsPresented && lettersPresented) {
+	  alert('Ваш пароль подходит!');
+  } else {
+	  alert('Ваш пароль НЕ подходит!');
+  }
+</script>
+
+</body>
+</html>
